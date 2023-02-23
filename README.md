@@ -2,40 +2,93 @@
 
 React 16.5.2
 
-## Questions
+Read [ReactFundamentals.md](./ReactFundamentals.md) for more detail
 
-1. What is React?
+Check out [ReactHook](https://github.com/PlanZGit/ReactHook) version 16.8
 
-   Open source library for building user interfaces
+# Subjects
 
-2. Why learn React?
+Old Information :
 
-   Created and maintained by Facebook. Huge community.
+1.  Functional Components, Class Components
+2.  Props, State, setState,
+3.  (Class Components) Event Handling, Binding Event Handlers, Methods as props
+4.  Conditional Rendering: Read [ConditionRender.md](./CondtionRender.md)
 
-## Component Based Architecture
+    - if/else
+    - Element variables
+    - Ternary conditional operator (use)
+    - Short circuit operator (use)
 
-1. A traditional website is broken down to HEADER, SIDENAV, MAIN CONTENT, FOOTER
-2. Each part can be a component and be reusable code for React, Angular, Vue by passing the right data.
+Missed information :
 
-## React is declarative
+1. Destructiong props and state
+2. JSX
+3. List and keys Read: [ListAndKey.md](./ListAndKey.md)
+4. React fragment - let us group children elements without adding any extra node in DOM
 
-1. Tell React what you want and React will build the actual UI
-2. React will handle effiently updating and rendering of the components
-3. DOM updates are handles gracefully in React
+## Destructiong props and state
 
-## More on why React?
+    _App.js_
+        <ComponentA John Smith />
 
-1. Seamlessly integrate react into any of your applications.
-2. Portion of your page or a complete page or even an entire application itself.
-3. React native for moblie applications.
+    _ComponentA.js_
+        const ComponentA = ({firstName, lastName}) => {
+          return <h1>{lastName}</h1>
+        }
+    Output: Smith
 
-## Prerequisites
+## JSX
 
-HTML, CSS, JavaScript fundamentals, ES6
+1. JavaScript XML (JSX) - Extension to the JavaScript language syntax
+2. Write XML - like code for elements and components
 
-- JavaScript - "this" keyword, filter, map and reduce
-- ES6 - let & const , arrow functions, template literals, default parameters, object literals, rest and spread operators and destructing assignment
+WIth JSX :
 
-## Channel content - React
+    function Greeting({ name }) {
+      return (
+        <h1 className="greeting">
+          Hello <i>{name}</i>. Welcome!
+        </h1>
+      );
+    }
 
-Fundamentals - HTTP - Routing - Redux - Utlities
+Without JSX :
+
+    import { createElement } from 'react';
+
+    function Greeting({ name }) {
+      return createElement(
+        'h1',
+        { className: 'greeting' },
+        'Hello ',
+        createElement('i', null, name),
+        '. Welcome!'
+      );
+    }
+
+## Lifecycle Methods
+
+Mounting means putting elements into the DOM. <br>
+React has four built-in methods that gets called, in this order, when mounting a component: <br>
+ComponentDidMount:
+
+1. constructor()
+2. getDerivedStateFromProps()
+3. render()
+4. componentDidMount()
+
+Order of execution of nested component:
+
+    Class component
+    Parent: ComponentA
+    Child: ComponentB
+
+    ComponentA constructor
+    ComponentA getDerivedstateFromProps
+    ComponentA render
+    ComponentB constructor
+    ComponentB getDerivedstateFromProps
+    ComponentB render
+    ComponentB componentDidMount
+    ComponentA componentDidMount
