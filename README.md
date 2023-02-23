@@ -1,4 +1,4 @@
-# ReactFundamentals
+# React Fundamentals
 
 React 16.5.2
 
