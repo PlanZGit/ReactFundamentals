@@ -12,10 +12,10 @@ Check out [ReactHook](https://github.com/PlanZGit/ReactHook) version 16.8
 
 # Subjects
 
-Skipped information.
+Old Information :
 
 1.  Functional Components, Class Components
-2.  JSX, Props, State, setState, Destructiong props and state
+2.  Props, State, setState,
 3.  (Class Components) Event Handling, Binding Event Handlers, Methods as props
 4.  Conditional Rendering: Read [ConditionRender.md](./CondtionRender.md)
 
@@ -24,7 +24,12 @@ Skipped information.
     - Ternary conditional operator (use)
     - Short circuit operator (use)
 
-5.  List and keys
+Missed information :
+
+1. Destructiong props and state
+2. JSX
+3. List and keys Read: [ListAndKey.md](./ListAndKey.md)
+4. React fragment - let us group children elements without adding any extra node in DOM
 
 ## Destructiong props and state
 
