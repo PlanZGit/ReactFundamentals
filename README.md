@@ -1,12 +1,10 @@
 # React Fundamentals
 
-React 16.5.2
-
-Read [ReactFundamentals.md](./ReactFundamentals.md) for more detail
+Read React 16.5.2 [introduction](./Introduction.md) for more detail
 
 Check out [ReactHook](https://github.com/PlanZGit/ReactHook) version 16.8
 
-# Subjects
+## React 16.5.2
 
 Old Information :
 
@@ -26,6 +24,8 @@ Missed information :
 2. JSX
 3. List and keys Read: [ListAndKey.md](./ListAndKey.md)
 4. React fragment - let us group children elements without adding any extra node in DOM
+
+# Notes
 
 ## Destructiong props and state
 
