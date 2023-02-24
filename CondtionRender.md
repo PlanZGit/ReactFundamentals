@@ -2,6 +2,11 @@
 
 Conditions are placed outside the JSX
 
+- if/else
+- Element variables
+- Ternary conditional operator (use)
+- Short circuit operator (use)
+
 1.  if/else :
 
         export class ConditionalRendering extends Component {
