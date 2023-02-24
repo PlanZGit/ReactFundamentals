@@ -8,22 +8,27 @@ Check out [ReactHook](https://github.com/PlanZGit/ReactHook) version 16.8
 
 Old Information :
 
-1.  Functional Components, Class Components
-2.  Props, State, setState,
-3.  (Class Components) Event Handling, Binding Event Handlers, Methods as props
-4.  Conditional Rendering: Read [ConditionRender.md](./CondtionRender.md)
-
-    - if/else
-    - Element variables
-    - Ternary conditional operator (use)
-    - Short circuit operator (use)
+1. Functional Components, Class Components
+2. Props, State, setState,
+3. (Class Components) Event Handling, Binding Event Handlers, Methods as props
+4. Conditional Rendering: Read [ConditionRender.md](./CondtionRender.md)
 
 Missed information :
 
 1. Destructiong props and state
-2. JSX
-3. List and keys Read: [ListAndKey.md](./ListAndKey.md)
-4. React fragment - let us group children elements without adding any extra node in DOM
+2. JSX : https://beta.reactjs.org/reference/react/createElement
+3. List and keys Read : [ListAndKey.md](./ListAndKey.md)
+
+New Information:
+
+1. Lifecycle Methods - [LifeCycleMethods.md](./LifeCycleMethods.md)
+2. React fragment - let us group children elements without adding any extra node in DOM
+3. Pure Components, memo
+4. Refs
+5. Portals - Use for a modal, pop-up, tooltip
+6. Error Boundary - A class component that implements either one or both of the lifecycle methods getDerivedStateFromError or componenDidCatch becomes an eror boundary.
+7. Higher Order Components - [HigherOrderComponent.md](./HigherOrderComponent.md)
+8. Render Props -
 
 # Notes
 
@@ -38,57 +43,20 @@ Missed information :
         }
     Output: Smith
 
-## JSX
+## Portals
 
-1. JavaScript XML (JSX) - Extension to the JavaScript language syntax
-2. Write XML - like code for elements and components
+Use for a modal, pop-up, tooltip
 
-WIth JSX :
+_PortalDemo.js_
 
-    function Greeting({ name }) {
-      return (
-        <h1 className="greeting">
-          Hello <i>{name}</i>. Welcome!
-        </h1>
-      );
+    import React from "react";
+    import ReactDom from "react-dom";
+
+    function PortalDemo() {
+    return ReactDom.createPortal(
+        <h1>PortalDemo</h1>,
+        document.getElementById("portal-root")
+    );
     }
 
-Without JSX :
-
-    import { createElement } from 'react';
-
-    function Greeting({ name }) {
-      return createElement(
-        'h1',
-        { className: 'greeting' },
-        'Hello ',
-        createElement('i', null, name),
-        '. Welcome!'
-      );
-    }
-
-## Lifecycle Methods
-
-Mounting means putting elements into the DOM. <br>
-React has four built-in methods that gets called, in this order, when mounting a component: <br>
-ComponentDidMount:
-
-1. constructor()
-2. getDerivedStateFromProps()
-3. render()
-4. componentDidMount()
-
-Order of execution of nested component:
-
-    Class component
-    Parent: ComponentA
-    Child: ComponentB
-
-    ComponentA constructor
-    ComponentA getDerivedstateFromProps
-    ComponentA render
-    ComponentB constructor
-    ComponentB getDerivedstateFromProps
-    ComponentB render
-    ComponentB componentDidMount
-    ComponentA componentDidMount
+    export default PortalDemo;
