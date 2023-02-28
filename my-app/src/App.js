@@ -1,6 +1,9 @@
 // import logo from "./logo.svg";
 
 import "./App.css";
+import PostForm from "./component/HTTP/PostForm";
+import PostList from "./component/HTTP/PostList";
+
 // import ClickCounterTwo from "./component/ClickCounterTwo";
 // import ClickCounter from "./component/ClickCounter";
 // import Counter from "./component/Counter";
@@ -48,6 +51,9 @@ function App() {
           <HoverCounterTwo count={count} incrementCount={incrementCount} />;
         }}
       /> */}
+
+      {/* <PostList /> */}
+      <PostForm />
     </div>
   );
 }

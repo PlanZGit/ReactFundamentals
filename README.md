@@ -28,7 +28,8 @@ New Information:
 5. Portals - Use for a modal, pop-up, tooltip
 6. Error Boundary - A class component that implements either one or both of the lifecycle methods getDerivedStateFromError or componenDidCatch becomes an eror boundary.
 7. Higher Order Components - [HigherOrderComponent.md](./HigherOrderComponent.md)
-8. Render Props -
+8. Render Props - [RenderProps.md](./RenderProps.md)
+9. HTTP - [HTTP.md](./HTTP.md)
 
 # Notes
 
